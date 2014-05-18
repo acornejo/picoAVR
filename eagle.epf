@@ -1,0 +1,35 @@
+[Eagle]
+Version="06 05 00"
+Platform="Mac OS X"
+Serial="62191E841E-LSR-WLM-1EL"
+Globals="Globals"
+Desktop="Desktop"
+
+[Globals]
+AutoSaveProject=0
+
+[Win_1]
+Type="Control Panel"
+Loc="360 248 959 647"
+State=2
+Number=0
+
+[Win_2]
+Type="Schematic Editor"
+Loc="360 248 959 647"
+State=0
+Number=2
+File="picoavr.sch"
+
+[Win_3]
+Type="Board Editor"
+Loc="360 248 959 647"
+State=2
+Number=1
+File="picoavr.brd"
+
+[Desktop]
+Screen="1440 900"
+Window="Win_1"
+Window="Win_2"
+Window="Win_3"

@@ -4,15 +4,14 @@
 
 string create_layer = "GRID mm;\nLAYER 116 drillImage;\nCHANGE LAYER 116;\n";
 string render_layer = "SET FILL_LAYER drillImage 1;\nDISPLAY NONE drillImage;\n";
-string delete_layer = "LAYER -116;\n";
+string undo_layer = "UNDO;\n";
 
 void draw_drillhole(int x, int y, int drill) {
    real radius = u2mm(drill) / 3;
    string h;
    sprintf(h, "circle 0 (%.3f %.3f) (%.3f %.3f);\n", u2mm(x), u2mm(y), u2mm(x)+radius, u2mm(y)+radius);
    create_layer += h;
-   sprintf(h, "delete (%.4f %.4f);\n", u2mm(x), u2mm(y));
-   delete_layer = h + delete_layer;
+   undo_layer += "UNDO;\n";
    return;
 }
 
@@ -40,7 +39,7 @@ if (argc < 3) {
             draw_drillhole(V.x, V.y, V.drill);
             }
         }
-        exit (create_layer + render_layer + delete_layer);
+        exit (create_layer + render_layer + undo_layer);
     } else {
         dlgMessageBox("Start this ULP in a Board!", "OK");
     }

@@ -26,6 +26,6 @@ EXPORT IMAGE eagle_top_silk.png MONOCHROME 600;
 DISPLAY None bPlace -bOrigins bNames -bValues -bDocu _bSilk;
 EXPORT IMAGE eagle_bottom_silk.png MONOCHROME 600;
 
-run drill-exportimage eagle_drill.png 600;
+run drillexport eagle_drill.png 600;
 
 DISPLAY ALL -tCream -bCream -tFinish -bFinish -tStop -bStop

@@ -6,21 +6,31 @@ BOARD_COLOR="red"
 COPPER_COLOR="gold"
 MASK_COLOR="red"
 MASK_OPACITY="50%"
+SILK_COLOR="white"
+HOLE_COLOR="black"
 
 rm -f board*.png mask.png holes.png copper*.png 
 
-${CONVERT} eagle_outline.png -transparent white -fill ${BOARD_COLOR} -colorize "100%" board.png
-${CONVERT} eagle_top_mask.png -negate -transparent-color white -background ${MASK_COLOR} -colorize ${MASK_OPACITY} -alpha Shape mask.png
-${CONVERT} eagle_drill.png -transparent-color black -background black -alpha Shape holes.png
-${CONVERT} eagle_top_silk.png -transparent-color black -background white -alpha Shape silk.png
-${CONVERT} eagle_top.png -transparent-color white -background ${COPPER_COLOR} -alpha Shape coppergold.png
-${CONVERT} eagle_top.png -shade 120x30 -auto-level coppershadow.png
-${CONVERT} coppergold.png coppershadow.png -compose Atop -composite coppershadow_cropped.png
-${CONVERT} coppergold.png coppershadow_cropped.png -compose Overlay -composite coppershaded.png
-${CONVERT} board.png coppershaded.png -compose Atop -composite board1.png
-${CONVERT} board1.png mask.png -compose Atop -composite board2.png
-${CONVERT} board2.png silk.png -compose Atop -composite board3.png
-${CONVERT} board3.png holes.png -compose Atop -composite board4.png
+
+${CONVERT} eagle_top.png \
+\( -clone 0 -shade 120x30 -auto-level \) -compose CopyOpacity -composite \
+\( -clone 0 -transparent-color white -background ${COPPER_COLOR} -alpha Shape \) \
+ -compose Overlay -composite coppershaded.png
+
+${CONVERT} eagle_top.png -transparent-color white -background black -alpha Shape -matte \
+            \( +clone -channel A -separate +channel  -bordercolor black -border 1  -blur 0x1 -shade 120x30 -auto-level -blur 0x1 -fill ${COPPER_COLOR} -tint 100 \) \
+            -gravity center -compose Atop -composite \
+            coppershaded2.png
+
+# ${CONVERT} eagle_top.png -transparent-color white -background ${COPPER_COLOR} -alpha Shape coppergold.png
+# ${CONVERT} eagle_top.png -shade 120x30 -auto-level coppershadow.png
+# ${CONVERT} coppergold.png coppershadow.png -compose Atop -composite coppershadow_cropped.png
+# ${CONVERT} coppergold.png coppershadow_cropped.png -compose Overlay -composite coppershaded.png
+${CONVERT} eagle_outline.png -transparent white -fill ${BOARD_COLOR} -colorize "100%" \
+coppershaded2.png -compose Atop -composite \
+\( eagle_top_mask.png -negate -transparent-color white -background ${MASK_COLOR} -colorize ${MASK_OPACITY} -alpha Shape \) -compose Atop -composite \
+\( eagle_top_silk.png -transparent-color black -background ${SILK_COLOR} -alpha Shape \) -compose Atop -composite \
+\( eagle_drill.png -transparent-color black -background ${HOLE_COLOR} -alpha Shape \) -compose Atop -composite board.png
 
 
 # ${CONVERT} eagle_top_mask.png eagle_top.png -compose plus -composite -shade 120x30 -auto-level -write mpr:copper_shadow +delete copper.png mpr:copper_shadow -compose Overlay -composite copper_shaded.png

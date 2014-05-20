@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.0393700787" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.000393700787" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -2029,9 +2029,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.7818" y1="17.2212" x2="5.08" y2="18.923" width="0.4064" layer="16"/>
 <wire x1="10.16" y1="18.923" x2="10.16" y2="17.2212" width="0.4064" layer="16"/>
 <contactref element="SW1" pad="1"/>
-<wire x1="12.1666" y1="7.2948" x2="12.1666" y2="6.3" width="0.254" layer="1"/>
-<wire x1="12.1666" y1="6.3" x2="15.1638" y2="6.3" width="0.254" layer="1"/>
-<wire x1="15.1638" y1="6.3" x2="15.1638" y2="6.6398" width="0.254" layer="1"/>
+<wire x1="12.1666" y1="7.2948" x2="12.1666" y2="6.29" width="0.254" layer="1"/>
+<wire x1="12.1666" y1="6.29" x2="15.1638" y2="6.29" width="0.254" layer="1"/>
+<wire x1="15.1638" y1="6.29" x2="15.1638" y2="6.6398" width="0.254" layer="1"/>
 <wire x1="16.975" y1="5.45" x2="16.3536" y2="5.45" width="0.254" layer="1"/>
 <wire x1="16.3536" y1="5.45" x2="15.1638" y2="6.6398" width="0.254" layer="1"/>
 </signal>
@@ -2051,13 +2051,13 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="17.018" y1="7.874" x2="18.542" y2="7.874" width="0.254" layer="1"/>
 <wire x1="18.542" y1="7.874" x2="18.5674" y2="7.817" width="0.254" layer="1"/>
 <wire x1="17.018" y1="7.874" x2="17.018" y2="9.002" width="0.254" layer="1"/>
-<wire x1="22.352" y1="7.1882" x2="22.5298" y2="7.0104" width="0.254" layer="1"/>
-<wire x1="22.5298" y1="7.0104" x2="27.1526" y2="7.017" width="0.254" layer="1"/>
-<wire x1="21.717" y1="7.8232" x2="18.5674" y2="7.817" width="0.254" layer="1"/>
+<wire x1="22.352" y1="7.1882" x2="22.5198" y2="7.0204" width="0.254" layer="1"/>
+<wire x1="22.5198" y1="7.0204" x2="27.1526" y2="7.017" width="0.254" layer="1"/>
+<wire x1="21.727" y1="7.8132" x2="18.5674" y2="7.817" width="0.254" layer="1"/>
 <contactref element="R1" pad="1"/>
 <contactref element="R2" pad="1"/>
 <contactref element="SJ1" pad="3"/>
-<wire x1="21.717" y1="7.8232" x2="22.352" y2="7.1882" width="0.254" layer="1"/>
+<wire x1="21.727" y1="7.8132" x2="22.352" y2="7.1882" width="0.254" layer="1"/>
 <wire x1="13.4874" y1="15.1384" x2="13.4874" y2="15.2908" width="0.254" layer="16"/>
 <wire x1="11.8364" y1="13.4874" x2="11.8364" y2="13.6398" width="0.4064" layer="16"/>
 <wire x1="11.8364" y1="13.6398" x2="13.4874" y2="15.2908" width="0.4064" layer="16"/>
@@ -2390,8 +2390,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="4.1148" y1="12.6238" x2="4.1148" y2="9.4618" width="0.4064" layer="1"/>
 <wire x1="4.1148" y1="9.4618" x2="4.4026" y2="9.3772" width="0.254" layer="1"/>
 <contactref element="SJ1" pad="1"/>
-<wire x1="2.6592" y1="15.2654" x2="1.2042" y2="15.2654" width="0.4064" layer="1"/>
-<wire x1="1.2042" y1="15.2654" x2="1.143" y2="15.5852" width="0.254" layer="1"/>
 <wire x1="2.6592" y1="15.2654" x2="2.6592" y2="19.0578" width="0.4064" layer="1"/>
 <wire x1="2.6592" y1="19.0578" x2="2.54" y2="19.177" width="0.254" layer="1"/>
 <wire x1="8.4074" y1="15.1384" x2="8.4074" y2="15.2908" width="0.254" layer="16"/>
@@ -2410,6 +2408,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="8.3566" y1="14.0716" x2="8.3566" y2="14.097" width="0.4064" layer="1"/>
 <wire x1="8.3566" y1="14.097" x2="8.4074" y2="14.1478" width="0.4064" layer="1"/>
 <wire x1="8.4074" y1="14.1478" x2="8.4074" y2="15.2908" width="0.4064" layer="1"/>
+<wire x1="1.143" y1="15.5852" x2="2.6592" y2="15.5852" width="0.4064" layer="1"/>
+<wire x1="2.6592" y1="15.5852" x2="2.6592" y2="15.2654" width="0.4064" layer="1"/>
 </signal>
 <signal name="USB_DMINUS">
 <contactref element="R3" pad="2"/>

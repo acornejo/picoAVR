@@ -2,30 +2,30 @@ DISPLAY ALL
 RATSNEST
 
 DISPLAY None Dimension;
-EXPORT IMAGE eagle_outline.png MONOCHROME 600;
+EXPORT IMAGE board_outline.png MONOCHROME 600;
 
 DISPLAY None Top Pads Vias;
-EXPORT IMAGE eagle_top.png MONOCHROME 600;
+EXPORT IMAGE board_top.png MONOCHROME 600;
 
 DISPLAY None Bottom Pads Vias;
-EXPORT IMAGE eagle_bottom.png MONOCHROME 600;
+EXPORT IMAGE board_bottom.png MONOCHROME 600;
 
 DISPLAY None tStop;
 SET FILL_LAYER tStop 1;
-EXPORT IMAGE eagle_top_mask.png MONOCHROME 600;
+EXPORT IMAGE board_top_mask.png MONOCHROME 600;
 UNDO;
 
 DISPLAY None bStop;
 SET FILL_LAYER bStop 1;
-EXPORT IMAGE eagle_bottom_mask.png MONOCHROME 600;
+EXPORT IMAGE board_bottom_mask.png MONOCHROME 600;
 UNDO;
 
 DISPLAY None tPlace -tOrigins tNames -tValues -tDocu _tSilk;
-EXPORT IMAGE eagle_top_silk.png MONOCHROME 600;
+EXPORT IMAGE board_top_silk.png MONOCHROME 600;
 
 DISPLAY None bPlace -bOrigins bNames -bValues -bDocu _bSilk;
-EXPORT IMAGE eagle_bottom_silk.png MONOCHROME 600;
+EXPORT IMAGE board_bottom_silk.png MONOCHROME 600;
 
-run drillexport eagle_drill.png 600;
+run drillexport board_drill.png 600;
 
 DISPLAY ALL -tCream -bCream -tFinish -bFinish -tStop -bStop

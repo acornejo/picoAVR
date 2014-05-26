@@ -1,19 +1,18 @@
 F_CPU = 12000000
 DEVICE = atmega328p
-
-all: blink
+PROGRAMMER = -c usbasp
 
 .PHONY: blink
+all: blink
 blink: build/blink.elf build/blink.hex build/blink.lss
 
 CC = avr-gcc
 OC = avr-objcopy
 OD = avr-objdump
-UP = avrdude
+SZ = avr-size --mcu=$(DEVICE)
+UP = avrdude $(PROGRAMMER) -p $(DEVICE)
 
-PFLAGS = -c usbasp
-CFLAGS = -Wall -gdwarf-2 -O3 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -mmcu=$(DEVICE) 
-CFLAGS += -DF_CPU=$(F_CPU)
+CFLAGS = -Wall -gdwarf-2 -O3 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -mmcu=$(DEVICE) -DF_CPU=$(F_CPU)
 
 FLASH = -R .eeprom -R .fuse -R .lock -R .signature
 EEPROM = -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0  
@@ -23,6 +22,7 @@ EEPROM = -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lm
 
 %.hex: %.elf
 	$(OC) -O ihex $(FLASH) $< $@
+	$(SZ) $<
 
 %.eep: %.elf
 	$(OC) -O ihex $(EEPROM) $< $@
@@ -37,7 +37,7 @@ build/blink.elf: blink.c | build
 	$(CC) $(CFLAGS) -o $@ $< 
 
 flash: build/blink.hex
-	$(UP) $(PFLAGS) -p $(DEVICE)$ -U "flash:w:build/blink.hex:i"
+	$(UP) -U "flash:w:build/blink.hex:i"
 
 clean:
 	rm -fR build

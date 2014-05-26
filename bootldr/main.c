@@ -255,7 +255,7 @@ void __func_clearram(void) {
 #endif
 
 #if (!USE_EXCESSIVE_ASSEMBLER) || (!(defined (__AVR_ATmega8__) || defined (__AVR_ATmega8A__) || defined (__AVR_ATmega8HVA__)))
-static void (*nullVector)(void) __attribute__((__noreturn__));
+static void (*nullVector)(void) __attribute__((__noreturn__)) = 0x0000;
 #endif
 
 #if (USE_EXCESSIVE_ASSEMBLER) && (defined (__AVR_ATmega8__) || defined (__AVR_ATmega8A__) || defined (__AVR_ATmega8HVA__))

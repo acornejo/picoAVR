@@ -17,23 +17,6 @@
 #include <avr/boot.h>
 #include <avr/eeprom.h>
 #include <util/delay.h>
-
-
-#if 0
-/*
- * 29.09.2012 /  30.09.2012
- * 
- * Since cpufunc.h is not needed in this context and
- * since it is not available in all toolchains, this include
- * becomes deactivated by github issue-report.
- * (In case of trouble it remains in sourcecode for reactivation.)
- * 
- * The autor would like to thank Lena-M for reporting this
- * issue (https://github.com/baerwolf/USBaspLoader/issues/1).
- */
-#include <avr/cpufunc.h>
-#endif
-
 #include <avr/boot.h>
 
 #include <string.h>
@@ -41,7 +24,7 @@
 
 
 #include "bootloaderconfig.h"
-#include "../usbdrv/usbdrv.c"
+#include "../usbdrv/usbdrv.h"
 
 #ifndef BOOTLOADER_ADDRESS
   #error need to know the bootloaders flash address!
@@ -77,16 +60,6 @@
 #endif
 #ifndef uint
 #   define uint     unsigned int
-#endif
-
-
-/* allow compatibility with avrusbboot's bootloaderconfig.h: */
-#ifdef BOOTLOADER_INIT
-#   define bootLoaderInit()         BOOTLOADER_INIT
-#   define bootLoaderExit()
-#endif
-#ifdef BOOTLOADER_CONDITION
-#   define bootLoaderCondition()    BOOTLOADER_CONDITION
 #endif
 
 /* device compatibility: */
@@ -312,7 +285,6 @@ static void leaveBootloader(void) {
 #else
 static void __attribute__((__noreturn__)) leaveBootloader(void);
 static void leaveBootloader(void) {
-    DBG1(0x01, 0, 0);
     cli();
     usbDeviceDisconnect();
     bootLoaderExit();
@@ -417,8 +389,6 @@ defined (__AVR_ATmega2561__)
 #else
       for(addr = 0; addr <= (addr_t)(FLASHEND) ; addr += SPM_PAGESIZE) {
 #endif
-	  /* wait and erase page */
-	  DBG1(0x33, 0, 0);
 #   ifndef NO_FLASH_WRITE
 	  boot_spm_busy_wait();
 	  cli();
@@ -505,7 +475,6 @@ uchar usbFunctionWrite(uchar *data, uchar len)
 {
 uchar   isLast;
 
-    DBG1(0x31, (void *)&currentAddress.l, 4);
     if(len > bytesRemaining)
         len = bytesRemaining;
     bytesRemaining -= len;
@@ -617,7 +586,6 @@ uchar usbFunctionWrite(uchar *data, uchar len)
 {
 uchar   i,isLast;
 
-    DBG1(0x31, (void *)&currentAddress.l, 4);
     if(len > bytesRemaining)
         len = bytesRemaining;
     bytesRemaining -= len;
@@ -633,7 +601,6 @@ uchar   i,isLast;
 	}
 #endif
 	i += 2;
-	DBG1(0x32, 0, 0);
 	cli();
 	boot_page_fill(CURRENT_ADDRESS, *(short *)data);
 	sei();
@@ -642,7 +609,6 @@ uchar   i,isLast;
 	/* write page when we cross page boundary or we have the last partial page */
 	if((currentAddress.w[0] & (SPM_PAGESIZE - 1)) == 0 || (isLast && i >= len && isLastPage)){
 #if (!HAVE_CHIP_ERASE) || (HAVE_ONDEMAND_PAGEERASE)
-	    DBG1(0x33, 0, 0);
 #   ifndef NO_FLASH_WRITE
 	    cli();
 	    boot_page_erase(CURRENT_ADDRESS - 2);   /* erase page */
@@ -650,7 +616,6 @@ uchar   i,isLast;
 	    boot_spm_busy_wait();                   /* wait until page is erased */
 #   endif
 #endif
-	    DBG1(0x34, 0, 0);
 #ifndef NO_FLASH_WRITE
 	    cli();
 	    boot_page_write(CURRENT_ADDRESS - 2);
@@ -662,7 +627,6 @@ uchar   i,isLast;
 #endif
 	}
         }
-        DBG1(0x35, (void *)&currentAddress.l, 4);
     }
     return isLast;
 }
@@ -737,8 +701,6 @@ int __attribute__((__noreturn__)) main(void)
 #endif
     /* initialize  */
     bootLoaderInit();
-    odDebugInit();
-    DBG1(0x00, 0, 0);
 #ifndef NO_FLASH_WRITE
     GICR = (1 << IVCE);  /* enable change of interrupt vectors */
     GICR = (1 << IVSEL); /* move interrupts to boot flash section */

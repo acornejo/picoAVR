@@ -19,8 +19,7 @@ General Description:
 This file (together with some settings in Makefile) configures the boot loader
 according to the hardware.
 
-This file contains (besides the hardware configuration normally found in
-usbconfig.h) two functions or macros: bootLoaderInit() and
+This file contains two functions or macros: bootLoaderInit() and
 bootLoaderCondition(). Whether you implement them as macros or as static
 inline functions is up to you, decide based on code size and convenience.
 
@@ -33,92 +32,7 @@ bootLoaderCondition() is called immediately after initialization and in each
 main loop iteration. If it returns TRUE, the boot loader will be active. If it
 returns FALSE, the boot loader jumps to address 0 (the loaded application)
 immediately.
-
-For compatibility with Thomas Fischl's avrusbboot, we also support the macro
-names BOOTLOADER_INIT and BOOTLOADER_CONDITION for this functionality. If
-these macros are defined, the boot loader usees them.
 */
-
-/* ---------------------------- Macro Magic ---------------------------- */
-#define		PIN_CONCAT(a,b)			a ## b
-#define		PIN_CONCAT3(a,b,c)		a ## b ## c
-
-#define		PIN_PORT(a)			PIN_CONCAT(PORT, a)
-#define		PIN_PIN(a)			PIN_CONCAT(PIN, a)
-#define		PIN_DDR(a)			PIN_CONCAT(DDR, a)
-
-#define		PIN(a, b)			PIN_CONCAT3(P, a, b)
-
-/* ---------------------------- Hardware Config ---------------------------- */
-
-#ifndef USB_CFG_IOPORTNAME
-  #define USB_CFG_IOPORTNAME      D
-#endif
-/* This is the port where the USB bus is connected. When you configure it to
- * "B", the registers PORTB, PINB and DDRB will be used.
- */
-#ifndef USB_CFG_INTPORT_BIT
-  #if (defined(__AVR_ATmega640__) || defined (__AVR_ATmega128__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__))
-    #define USB_CFG_INTPORT_BIT 0
-  #else
-    #define USB_CFG_INTPORT_BIT 2
-  #endif
-#endif
-/* Not all devices have their INT0 on PD2.
- * Since "INT0" and "USB_CFG_DPLUS_BIT" should get the same signals,
- * map them to be ideally the same:
- * So abstract "USB_CFG_DPLUS_BIT" to this one here.
- */
-
-#ifndef USB_CFG_DMINUS_BIT
-  /* This is Revision 3 and later (where PD6 and PD7 were swapped */
-  #define USB_CFG_DMINUS_BIT      7    /* Rev.2 and previous was 6 */
-#endif
-/* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
- * This may be any bit in the port.
- */
-#ifndef USB_CFG_DPLUS_BIT
-  #define USB_CFG_DPLUS_BIT       USB_CFG_INTPORT_BIT
-#endif
-/* This is the bit number in USB_CFG_IOPORT where the USB D+ line is connected.
- * This may be any bit in the port. Please note that D+ must also be connected
- * to interrupt pin INT0!
- */
-#ifndef JUMPER_PORT
-  #define JUMPER_PORT		USB_CFG_IOPORTNAME
-#endif
-/* 
- * jumper is connected to this port
- */
-#ifndef JUMPER_BIT
-  /* This is Revision 3 and later (where PD6 and PD7 were swapped */
-  #define JUMPER_BIT           6       /* Rev.2 and previous was 7 */
-#endif
-/* 
- * jumper is connected to this bit in port "JUMPER_PORT", active low
- */
-
-#define USB_CFG_CLOCK_KHZ       (F_CPU/1000)
-/* Clock rate of the AVR in MHz. Legal values are 12000, 16000 or 16500.
- * The 16.5 MHz version of the code requires no crystal, it tolerates +/- 1%
- * deviation from the nominal frequency. All other rates require a precision
- * of 2000 ppm and thus a crystal!
- * Default if not specified: 12 MHz
- */
-
-/* ----------------------- Optional Hardware Config ------------------------ */
-
-/* #define USB_CFG_PULLUP_IOPORTNAME   D */
-/* If you connect the 1.5k pullup resistor from D- to a port pin instead of
- * V+, you can connect and disconnect the device from firmware by calling
- * the macros usbDeviceConnect() and usbDeviceDisconnect() (see usbdrv.h).
- * This constant defines the port on which the pullup resistor is connected.
- */
-/* #define USB_CFG_PULLUP_BIT          4 */
-/* This constant defines the bit number in USB_CFG_PULLUP_IOPORT (defined
- * above) where the 1.5k pullup resistor is connected. See description
- * above for details.
- */
 
 /* ------------------------------------------------------------------------- */
 /* ---------------------- feature / code size options ---------------------- */
@@ -569,8 +483,8 @@ static inline void  bootLoaderInit(void)
 {
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #else
-    PIN_DDR(JUMPER_PORT)  = 0;
-    PIN_PORT(JUMPER_PORT) = (1<< PIN(JUMPER_PORT, JUMPER_BIT)); /* activate pull-up */
+    DDRD = 0;
+    PORTD = (1<<PD6);
 #endif
 
 //     deactivated by Stephan - reset after each avrdude op is annoing!
@@ -582,7 +496,7 @@ static inline void  bootLoaderExit(void)
 {
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #else
-    PIN_PORT(JUMPER_PORT) = 0;		/* undo bootLoaderInit() changes */
+    PORTD = 0;
 #endif
 }
 
@@ -590,7 +504,7 @@ static inline void  bootLoaderExit(void)
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #	define bootLoaderConditionSimple()	(false)
 #else
-#	define bootLoaderConditionSimple()	((PIN_PIN(JUMPER_PORT) & (1 << PIN(JUMPER_PORT, JUMPER_BIT))) == 0)
+#	define bootLoaderConditionSimple()	((PIND & (1 << PD6)) == 0)
 #endif
 
 #if (HAVE_BOOTLOADERENTRY_FROMSOFTWARE)

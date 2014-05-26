@@ -10,16 +10,52 @@
 #ifndef __usbconfig_h_included__
 #define __usbconfig_h_included__
 
-/* YOU SHOULD NOT NEED TO MODIFY THIS FILE! All configurations are supposed
- * to go into bootloaderconfig.h!
- */
+/*
+General Description:
+This file contains parts of the USB driver which can be configured and can or
+must be adapted to your hardware.
+
+Please note that the usbdrv contains a usbconfig-prototype.h file now. We
+recommend that you use that file as a template because it will always list
+the newest features and options.
+*/
 
 /* ---------------------------- Hardware Config ---------------------------- */
 
-/* All the port and pin assignments, as well as the clock speed and CRC
-   setting are now in bootloaderconfig.h: */
+#define USB_CFG_IOPORTNAME      D
+/* This is the port where the USB bus is connected. When you configure it to
+ * "B", the registers PORTB, PINB and DDRB will be used.
+ */
+#define USB_CFG_DMINUS_BIT      7
+/* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
+ * This may be any bit in the port.
+ */
+#define USB_CFG_DPLUS_BIT       2
+/* This is the bit number in USB_CFG_IOPORT where the USB D+ line is connected.
+ * This may be any bit in the port. Please note that D+ must also be connected
+ * to interrupt pin INT0!
+ */
+#define USB_CFG_CLOCK_KHZ (F_CPU/1000)
+/* Clock rate of the AVR in MHz. Legal values are 12000, 16000 or 16500.
+ * The 16.5 MHz version of the code requires no crystal, it tolerates +/- 1%
+ * deviation from the nominal frequency. All other rates require a precision
+ * of 2000 ppm and thus a crystal!
+ * Default if not specified: 12 MHz
+ */
 
-#include "bootloaderconfig.h"
+/* ----------------------- Optional Hardware Config ------------------------ */
+
+/* #define USB_CFG_PULLUP_IOPORTNAME   D */
+/* If you connect the 1.5k pullup resistor from D- to a port pin instead of
+ * V+, you can connect and disconnect the device from firmware by calling
+ * the macros usbDeviceConnect() and usbDeviceDisconnect() (see usbdrv.h).
+ * This constant defines the port on which the pullup resistor is connected.
+ */
+/* #define USB_CFG_PULLUP_BIT          4 */
+/* This constant defines the bit number in USB_CFG_PULLUP_IOPORT (defined
+ * above) where the 1.5k pullup resistor is connected. See description
+ * above for details.
+ */
 
 /* --------------------------- Functional Range ---------------------------- */
 
@@ -234,11 +270,6 @@
  * If you use this define, you must add a PROGMEM character array named
  * "usbHidReportDescriptor" to your code which contains the report descriptor.
  * Don't forget to keep the array and this define in sync!
- */
-
-#define USB_PUBLIC static
-/* Use the define above if you #include usbdrv.c instead of linking against it.
- * This technique saves a couple of bytes in flash memory.
  */
 
 /* ------------------- Fine Control over USB Descriptors ------------------- */

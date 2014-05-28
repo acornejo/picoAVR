@@ -2,13 +2,11 @@ F_CPU = 12000000
 DEVICE = atmega328p
 PROGRAMMER = -c usbasp
 
-.PHONY: blink
-all: blink
-blink: build/blink.elf build/blink.hex build/blink.lss
+all: build/blink.hex build/blink.lss
 build/blink.elf: build/blink.o | build
 build/blink.o: blink.c | build
 
-CC = avr-gcc -mmcpu=$(DEVICE)
+CC = avr-gcc -mmcu=$(DEVICE)
 OC = avr-objcopy
 OD = avr-objdump
 SZ = avr-size --mcu=$(DEVICE)

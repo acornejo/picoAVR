@@ -2,42 +2,54 @@ F_CPU = 12000000
 DEVICE = atmega328p
 PROGRAMMER = -c usbasp
 
-all: main.hex main.lss
+VPATH = ../../usbdrv
 
-CC = avr-gcc
+all: build/main.hex build/main.lss
+build/main.elf: build/main.o build/usbdrv.o build/usbdrvasm.o build/isp.o build/clock.o build/tpi.o
+build/main.o: main.c | build
+build/usbdrv.o: usbdrv.c | build
+build/usbdrvasm.o: usbdrvasm.S | build
+build/isp.o: isp.c | build
+build/clock.o: clock.c | build
+build/tpi.o: tpi.S | build
+
+CC = avr-gcc -mmcu=$(DEVICE)
 OC = avr-objcopy
 OD = avr-objdump
 SZ = avr-size --mcu=$(DEVICE)
 UP = avrdude $(PROGRAMMER) -p $(DEVICE)
 
-CFLAGS = -Wall -Os -I. -mmcu=$(DEVICE) -DF_CPU=$(F_CPU)
-
-OBJECTS = usbdrv.o usbdrvasm.o isp.o clock.o tpi.o main.o
-
-usbdrv.o: ../../usbdrv/usbdrv.c $(DEPENDS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-usbdrvasm.o: ../../usbdrv/usbdrvasm.S $(DEPENDS)
-	$(CC) $(CFLAGS) -x assembler-with-cpp -c $< -o $@
-
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
-
-.S.o:
-	$(CC) $(CFLAGS) -x assembler-with-cpp -c $< -o $@
-
-main.elf: $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
+CFLAGS = -Wall -Os -I. -DF_CPU=$(F_CPU)
+FLASH = -R .eeprom -R .fuse -R .lock -R .signature
+EEPROM = -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0  
 
 %.lss: %.elf
 	$(OD) -d -S $< > $@
 
 %.hex: %.elf
-	$(OC) -O ihex -j .text -j .data $< $@
+	$(OC) -O ihex $(FLASH) $< $@
 	$(SZ) $<
 
-flash: main.hex
-	$(UP) -U flash:w:main.hex:i
+%.eep: %.elf
+	$(OC) -O ihex $(EEPROM) $< $@
+
+%.bin: %.elf
+	$(OC) -O binary $(FLASH) $< $@ 
+
+%.elf: %.o
+	$(CC) $(LDFLAGS) -o $@ $^
+
+build/%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $^
+
+build/%.o: %.S
+	$(CC) $(CFLAGS) -x assembler-with-cpp -o $@ -c $^
+
+build:
+	mkdir -p $@
+
+flash: build/main.hex
+	$(UP) -U "flash:w:$<:i"
 
 clean:
-	rm -f main.elf main.hex main.lss $(OBJECTS)
+	rm -fR build

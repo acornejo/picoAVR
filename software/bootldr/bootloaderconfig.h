@@ -14,6 +14,10 @@
 
 #include <avr/io.h>
 
+#define JUMPER_INPUT_PORT PIND
+#define JUMPER_OUTPUT_PORT PORTD
+#define JUMPER_PIN PD6
+
 /*
 General Description:
 This file (together with some settings in Makefile) configures the boot loader
@@ -483,8 +487,7 @@ static inline void  bootLoaderInit(void)
 {
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #else
-    DDRD = 0;
-    PORTD = (1<<PD6);
+    JUMPER_OUTPUT_PORT = (1<<JUMPER_PIN);
 #endif
 
 //     deactivated by Stephan - reset after each avrdude op is annoing!
@@ -496,7 +499,7 @@ static inline void  bootLoaderExit(void)
 {
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #else
-    PORTD = 0;
+    JUMPER_OUTPUT_PORT = 0;
 #endif
 }
 
@@ -504,7 +507,7 @@ static inline void  bootLoaderExit(void)
 #if (BOOTLOADER_IGNOREPROGBUTTON)
 #	define bootLoaderConditionSimple()	(false)
 #else
-#	define bootLoaderConditionSimple()	((PIND & (1 << PD6)) == 0)
+#	define bootLoaderConditionSimple()	((JUMPER_INPUT_PORT& (1 << JUMPER_PIN)) == 0)
 #endif
 
 #if (HAVE_BOOTLOADERENTRY_FROMSOFTWARE)

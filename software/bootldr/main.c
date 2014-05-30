@@ -11,6 +11,7 @@
 
 #include "spminterface.h"  /* must be included as first! */
 
+#include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 #include <avr/wdt.h>
@@ -20,6 +21,10 @@
 #include <avr/boot.h>
 
 #include <string.h>
+
+#ifndef SPMEN
+#define SPMEN SELFPRGEN
+#endif
 
 
 
@@ -725,8 +730,8 @@ asm  volatile  (
   : [normval]     "M" (stayinloader_initialValue)
 #		if (!(BOOTLOADER_IGNOREPROGBUTTON))
                                                     ,
-    [pin]         "I" (_SFR_IO_ADDR(PIN_PIN(JUMPER_PORT))),
-    [bit]         "I" (PIN(JUMPER_PORT, JUMPER_BIT))
+    [pin]         "I" (_SFR_IO_ADDR(JUMPER_INPUT_PORT)),
+    [bit]         "I" (JUMPER_PIN)
 #		endif    
 );
 #	else
@@ -802,8 +807,8 @@ asm  volatile  (
 
   "main_stayinloader_finished:\n\t"
   : [sil]        "+d" (stayinloader)
-  : [pin]         "I" (_SFR_IO_ADDR(PIN_PIN(JUMPER_PORT))),
-    [bit]         "I" (PIN(JUMPER_PORT, JUMPER_BIT))
+  : [pin]         "I" (_SFR_IO_ADDR(JUMPER_INPUT_PORT)),
+    [bit]         "I" (JUMPER_PIN)
 );
 #else
 	if (stayinloader >= 0x10) {

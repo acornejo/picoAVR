@@ -1,8 +1,6 @@
 F_CPU = 12000000
-DEVICE = atmega328p
+DEVICE = atmega328
 PROGRAMMER = -c usbasp
-BOOTLOADER_ADDRESS = 0x7000
-FUSEOPT = -U lfuse:w:0xd7:m -U hfuse:w:0xd0:m -U efuse:w:0x04:m
 
 VPATH = ../usbdrv
 
@@ -18,8 +16,10 @@ OD = avr-objdump
 SZ = avr-size --mcu=$(DEVICE)
 UP = avrdude $(PROGRAMMER) -p $(DEVICE)
 
-CFLAGS = -Wall -Os -I. -DBOOTLOADER_ADDRESS=$(BOOTLOADER_ADDRESS) -DF_CPU=$(F_CPU)
-LDFLAGS = -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS) -Wl,--defsym=nullVector=0
+include buildparams.inc
+
+CFLAGS = -Wall -Os -g3 -ggdb -fno-move-loop-invariants -fno-tree-scev-cprop -fno-inline-small-functions -I. -DBOOTLOADER_ADDRESS=$(BOOTLOADER_ADDRESS) -DF_CPU=$(F_CPU) $(DEFINES)
+LDFLAGS = -Wl,--relax,--gc-sections -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS) -Wl,--defsym=nullVector=0
 FLASH = -R .eeprom -R .fuse -R .lock -R .signature
 EEPROM = -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0  
 
@@ -49,7 +49,7 @@ build:
 	mkdir -p $@
 
 flash: build/main.hex
-	$(UP) -U flash:w:$<.hex:i
+	$(UP) -U flash:w:$<:i
 
 readflash:
 	$(UP) -U flash:r:read.hex:i

@@ -74,8 +74,8 @@ The eagle board files are available in the
 
 Below is a rendering of the top and bottom of the PCB.
 
-![TopBoard](images/board_top_render.png "Top View PCB")
-![BottomBoard](images/board_bottom_render.png "Bottom View PCB")
+![TopBoard](http://acornejo.github.io/picoAVR/images/board_top_render.png "Top View PCB")
+![BottomBoard](http://acornejo.github.io/picoAVR/images/board_bottom_render.png "Bottom View PCB")
 
 ### Burning the Bootloader
 To get the PicoAVR usbasp-based bootloader into the AVR chip, you will

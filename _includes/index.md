@@ -35,14 +35,14 @@ would like to build your own hardware.
 
 ## Build Your Own
 
-Keep in mind that due to the economy of scale, building one or two
-boards is significantly more expensive than building 100 or 1000 boards.
-Still, even when building a single board the total cost in parts is less
-than 10$.
+The cost of the components required for building a single PicoAVR is
+less than 10$.
 
-This is ignoring shipping and the cost of the equipment required
-(a soldering station and an ICSP programmer to burn the
- bootloader, more on that below).
+Moreover, keep in mind that due to the economy of scale, building one PicoAVR
+is significantly more expensive than building 100 or 1000 boards.
+
+This is ignoring the cost of the equipment required (a soldering station
+and an ICSP programmer to burn the bootloader, more on that below).
 
 ### BOM
 

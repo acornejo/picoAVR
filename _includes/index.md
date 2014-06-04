@@ -43,6 +43,15 @@ board (by closing the self-program jumper), or to act as an ICSP
 programmer to reprogram any other AVR development board with an ICSP
 connected (including an arduino).
 
+
+### PCB
+
+You can get 3 PCB's from [oshpark.com](http://oshpark.com) for only 5$
+including shipping! The eagle board files are available in the
+[repository](https://github.com/acornejo/picoAVR/tree/master/hardware).
+
+Below is a rendering of the top and bottom of the PCB.
+
 ![TopBoard](images/board_top_render.png "Top View PCB")
 ![BottomBoard](images/board_bottom_render.png "Bottom View PCB")
 

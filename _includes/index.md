@@ -46,20 +46,20 @@ This is ignoring shipping and the cost of the equipment required
 
 ### BOM
 
-Part | Description | Package | DigiKey Part # | Price ($)
------------------------------------------------------
-C1,C2 | 4.7uF Capacitor           | 402          | 1276-1056-1-ND       | 0.23 x 2
-C3,C4 | 22pF  Capacitor           | 402          | 1276-1681-1-ND       | 0.1 x 2
-C5,C6 | 0.1uF Capacitor           | 402          | 1276-1443-1-ND       | 0.1 x 2
-R1,R2 | 68 Ohm Resistor           | 402          | RMCF0402JT68R0CT-ND  | 0.02 x 2
-R3    | 1.5k Ohm Resistor         | 402          | RMCF0402JT1K50CT-ND  | 0.02 x 1 
-R5    | 10k Ohm Resistor          | 402          | RMCF0402JT10K0CT-ND  | 0.02 x 1
-R6    | 220 Ohm Resistor          | 402          | RMCF0402JT220RCT-ND  | 0.02 x 1
-Q1    | 12 Mhz Crystal            | 3.2 x 2.5mm  | 887-2355-1-ND        | 0.71 x 1
-U1    | Atmega328p                | TQFP-32      | ATMEGA328P-AU-ND     | 3.61 x 1
-IC1   | MCP1700 Voltage Regulator | SOT23        | MCP1700T3302ETTCT-ND | 0.44 x 1
-X1    | MicroUSB Connector        | USB-MICRO    | 609-4613-1-ND        | 0.46 x 1
-SW1   | Tactile Switch            | 3mm x 4mm    | CKN10502CT-ND        | 0.28 x 1
+|Part  | Description               | Package      | DigiKey Part #       | Price ($) |
+|------|---------------------------|--------------|----------------------|-----------|
+|C1,C2 | 4.7uF Capacitor           | 402          | 1276-1056-1-ND       | 0.23 x 2  |
+|C3,C4 | 22pF  Capacitor           | 402          | 1276-1681-1-ND       | 0.1 x 2   |
+|C5,C6 | 0.1uF Capacitor           | 402          | 1276-1443-1-ND       | 0.1 x 2   |
+|R1,R2 | 68 Ohm Resistor           | 402          | RMCF0402JT68R0CT-ND  | 0.02 x 2  |
+|R3    | 1.5k Ohm Resistor         | 402          | RMCF0402JT1K50CT-ND  | 0.02 x 1  |
+|R5    | 10k Ohm Resistor          | 402          | RMCF0402JT10K0CT-ND  | 0.02 x 1  |
+|R6    | 220 Ohm Resistor          | 402          | RMCF0402JT220RCT-ND  | 0.02 x 1  |
+|Q1    | 12 Mhz Crystal            | 3.2 x 2.5mm  | 887-2355-1-ND        | 0.71 x 1  |
+|U1    | Atmega328p                | TQFP-32      | ATMEGA328P-AU-ND     | 3.61 x 1  |
+|IC1   | MCP1700 Voltage Regulator | SOT23        | MCP1700T3302ETTCT-ND | 0.44 x 1  |
+|X1    | MicroUSB Connector        | USB-MICRO    | 609-4613-1-ND        | 0.46 x 1  |
+|SW1   | Tactile Switch            | 3mm x 4mm    | CKN10502CT-ND        | 0.28 x 1  |
 
 The total comes to 6.5$ per board, although the price goes down if you
 want to build more boards.

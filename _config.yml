@@ -1,7 +1,7 @@
 markdown: redcarpet
 pygments: true
 
-title_tag_text: Solo, a Jekyll Theme
-h1_tag_text: Solo
+title_tag_text: PicoAVR, A minimalistic solution for AVR development
+h1_tag_text: PicoAVR
 
 exclude: ["Procfile", "Gruntfile.js", "README.md", "package.json", "node_modules"]

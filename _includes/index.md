@@ -2,7 +2,7 @@
 
 [Solo](http://solo.chibi.io) is a Jekyll theme that supports **single-page websites** only, but supports them well. Yes, it's responsive.
 
-<iframe src="http://ghbtns.com/github-btn.html?user=chibicode&amp;repo=solo&amp;type=watch&amp;count=true&amp;size=large"
+<iframe src="http://ghbtns.com/github-btn.html?user=acornejo&amp;repo=picoAVR&amp;type=watch&amp;count=true&amp;size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br/>
 
 ## Solo is useful if...

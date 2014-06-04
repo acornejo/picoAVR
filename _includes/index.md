@@ -44,8 +44,9 @@ programmer to reprogram any other AVR development board with an ICSP
 connected (including an arduino).
 
 ![TopBoard](images/board_top_render.png "Top View PCB")
+![BottomBoard](images/board_bottom_render.png "Bottom View PCB")
 
-### License
+## License
 
 [MIT License](http://opensource.org/licenses/MIT)
 

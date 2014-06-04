@@ -1,1 +1,6 @@
-github page
+---
+layout: default
+---
+
+{% capture index %}{% include index.md %}{% endcapture %}
+{{ index | markdownify }}

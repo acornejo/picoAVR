@@ -5,6 +5,8 @@ that aims to develop a minimalistic but fully functional AVR development
 board. You can buy the components to build your own for less than 10$
 per board.
 
+![Blinky](images/photo.jpg "Blinky on PicoAVR")
+
 The PicoAVR can be powered and programmed through a standard MicroUSB
 connector, the same connector used by android phones and tablets.
 PicoAVR uses the [V-USB](http://www.obdev.at/products/vusb/index.html)

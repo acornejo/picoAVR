@@ -39,12 +39,11 @@ requiring a level shifter.
 
 ## PicoAVR may be interesting to you if...
 
-* You are already developing hardware projects using an Arduino, and you
-would like to build your own hardware.
+* You are already developing hardware projects using an Arduino, but you
+would prefer to build your own hardware.
 * You want to get started with AVR microcontrollers, but don't want to
 spend 25$ on an Arduino UNO or an Arduino Micro.
-* You want an AVR development board which can also act as an ICSP
-programmer and provides a standard 6-pin ICSP connector.
+* You want an AVR development board which has a standard 6-pin ICSP connector and can be used as an ICSP programmer for other microcontrollers.
 * You want to create a board of your own using an AVR microcontroller
 and you are looking for a simple reference design.
 

@@ -43,7 +43,9 @@ requiring a level shifter.
 would prefer to build your own hardware.
 * You want to get started with AVR microcontrollers, but don't want to
 spend 25$ on an Arduino UNO or an Arduino Micro.
-* You want an AVR development board which has a standard 6-pin ICSP connector and can be used as an ICSP programmer for other microcontrollers.
+* You want an AVR development board which has a standard 6-pin ICSP
+connector and can be used as an ICSP programmer for other
+microcontrollers.
 * You want to create a board of your own using an AVR microcontroller
 and you are looking for a simple reference design.
 
@@ -56,7 +58,7 @@ Moreover, keep in mind that due to economies of scale, building 100 or
 board.
 
 The only equipment required to build your own PicoAVR is a soldering
-iron and an ICSP programmer to burn the bootloader (more on that below).
+iron and an ICSP programmer to flash the bootloader (more on that below).
 
 ### BOM
 
@@ -75,7 +77,7 @@ iron and an ICSP programmer to burn the bootloader (more on that below).
 |X1    | MicroUSB Connector        | USB-MICRO    | 609-4613-1-ND        | 0.46 x 1  |
 |SW1   | Tactile Switch            | 3mm x 4mm    | CKN10502CT-ND        | 0.28 x 1  |
 
-The total comes to 6.5$ per board, and digikey offers educational and
+The total comes to less than 6.5$ per board. Digikey offers educational and
 bulk discounts.
 
 ### PCB
@@ -91,17 +93,17 @@ Below is a rendering of the top and bottom of the PCB.
 ![TopBoard](http://acornejo.github.io/picoAVR/images/board_top_render.png "Top View PCB")
 ![BottomBoard](http://acornejo.github.io/picoAVR/images/board_bottom_render.png "Bottom View PCB")
 
-### Burning the Bootloader
-To get the PicoAVR usbasp-based bootloader into the AVR chip you will
+### Flashing the Bootloader
+To get the PicoAVR usbasp-based bootloader flashed into the AVR chip you will
 need either: a dedicated [ICSP
 programmer](http://store.atmel.com/PartDetail.aspx?q=p:10500054#tc:description),
 an [Arduino](http://arduino.cc/en/Tutorial/ArduinoISP) and jumper
 cables, or an already functioning PicoAVR.
 
 The PicoAVR provides a standard 6-pin ICSP connector that can be used to
-either burn the bootloader into the board (by closing the self-program
+either flash the bootloader into the board (by closing the self-program
 jumper), or to act as an ICSP programmer to reprogram any other
-AVR board (including another PicoAVR or an Arduino) using the standard
+AVR board (including another PicoAVR or an Arduino) using a standard
 6-pin ICSP connector.
 
 ## License

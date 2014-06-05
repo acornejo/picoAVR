@@ -1,12 +1,10 @@
 pygments: true
+markdown: redcarpet
 
-title_tag_text: PicoAVR, A minimalistic solution for AVR development
-h1_tag_text: PicoAVR
-
+title_text: PicoAVR, A minimalistic solution for AVR development
 github_repo_url: https://github.com/acornejo/picoAVR
 
-exclude: ["Procfile", "Gruntfile.js", "README.md", "package.json", "node_modules"]
-
-markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+exclude: ["Procfile", "Gruntfile.js", "README.md", "package.json", "node_modules"]

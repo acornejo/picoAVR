@@ -1,3 +1,5 @@
+# [PicoAVR](http://acornejo.github.io/picoAVR)
+
 [PicoAVR](http://acornejo.github.io/picoAVR) is an open source project
 that aims to develop a minimalistic but fully functional AVR development
 board. You can buy the components to build your own for less than 10$

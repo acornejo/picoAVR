@@ -2,8 +2,8 @@
 
 [PicoAVR](http://acornejo.github.io/picoAVR) is an open source project
 that aims to develop a minimalistic but fully functional AVR development
-board. You can buy the components to build your own for less than 10$
-per board.
+board. For less than 10$ you can buy all the components required to
+build your own PicoAVR.
 
 ![Blinky](http://acornejo.github.io/picoAVR/images/photo.jpg "Blinky on PicoAVR")
 
@@ -14,8 +14,8 @@ software implementation of the USB stack, and when connected to your
 computer can easily be programmed to emulate a keyboard,
 mouse or any other HID device.
 
-The PicoAVR board is similar in capabilities to the Arduino UNO, Arduino
-Micro or the Arduino Leonardo, but by using an atmega328p and V-USB
+The PicoAVR board is similar in capabilities to the [Arduino UNO](http://arduino.cc/en/Main/ArduinoBoardUno), [Arduino
+Micro](http://arduino.cc/en/Main/arduinoBoardMicro) or the [Arduino Leonardo](http://arduino.cc/en/Main/arduinoBoardLeonardo), but by using an atmega328p and V-USB
 instead of an FTDI chip or an atmega328u4 the number of components and
 the cost of the PicoAVR is significantly reduced.
 
@@ -46,8 +46,7 @@ and you are looking for a simple reference design.
 
 ## Build Your Own
 
-The cost of the components required for building a single PicoAVR is
-less than 10$.
+You can buy the components to build your own for less than 10$ per board.
 
 Moreover, keep in mind that due to economies of scale, building 100 or
 1000 PicoAVR's is significantly cheaper per unit than building a single

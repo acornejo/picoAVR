@@ -1,48 +1,60 @@
+# [PicoAVR](http://acornejo.github.io/picoAVR)
+
 [PicoAVR](http://acornejo.github.io/picoAVR) is an open source project
 that aims to develop a minimalistic but fully functional AVR development
-board.
+board. You can buy the components to build your own for less than 10$
+per board.
 
-User programs can be uploaded to the PicoAVR using a standard MicroUSB
-connector (the same used by android phones). PicoAVR uses
-[V-USB](http://www.obdev.at/products/vusb/index.html) and when connected
-to your computer can be programmed to
-emulate a keyboard, mouse or any other HID device.
+![Blinky](http://acornejo.github.io/picoAVR/images/photo.jpg "Blinky on PicoAVR")
+
+The PicoAVR can be powered and programmed through a standard MicroUSB
+connector, the same connector used by android phones and tablets.
+PicoAVR uses the [V-USB](http://www.obdev.at/products/vusb/index.html)
+software implementation of the USB stack, and when connected to your
+computer can easily be programmed to emulate a keyboard,
+mouse or any other HID device.
 
 The PicoAVR board is similar in capabilities to the Arduino UNO, Arduino
 Micro or the Arduino Leonardo, but by using an atmega328p and V-USB
-instead of an FTDI chip or an atmega328u4 the cost of the PicoAVR is
-significantly decreased.
+instead of an FTDI chip or an atmega328u4 the number of components and
+the cost of the PicoAVR is significantly reduced.
 
-Since PicoAVR uses the standard usbasp protocol for programming, the
-arduino IDE can be used as a complete development environment for
-PicoAVR; however usage of arduino is strictly optional, and in no way
-required to develop with the PicoAVR.
+Since PicoAVR uses the same
+[protocol](http://www.obdev.at/products/vusb/usbasploader.html) as the
+[usbasp](www.fischl.de/usbasp/) for programming, it is fully compatible
+with the latest versions of avrdude. As a result of this both 
+Atmel Studio 6 or the Arduino Software can be used as complete
+development environments for the PicoAVR. However, you are not
+constrained to these, and you can easily develop for the PicoAVR using
+avr-gcc, avrdude and the editor of your choice.
 
-In its default configuration the PicoAVR operates at 3.3V and runs at
-12Mhz, although other configurations are possible.
+In its default configuration the PicoAVR runs at 12 Mhz and operates at
+3.3 V, which makes it easy to interface to the newer 3.3 V devices without
+requiring a level shifter.
 
 
-## PicoAVR is useful if...
+## PicoAVR may be interesting to you if...
 
+* You are already developing hardware projects using an Arduino, and you
+would like to build your own hardware.
 * You want to get started with AVR microcontrollers, but don't want to
 spend 25$ on an Arduino UNO or an Arduino Micro.
 * You want an AVR development board which can also act as an ICSP
-programmer.
+programmer and provides a standard 6-pin ICSP connector.
 * You want to create a board of your own using an AVR microcontroller
 and you are looking for a simple reference design.
-* You are already developing hardware projects using an Arduino, and you
-would like to build your own hardware.
 
 ## Build Your Own
 
 The cost of the components required for building a single PicoAVR is
 less than 10$.
 
-Moreover, keep in mind that due to the economy of scale, building one PicoAVR
-is significantly more expensive than building 100 or 1000 boards.
+Moreover, keep in mind that due to economies of scale, building 100 or
+1000 PicoAVR's is significantly cheaper per unit than building a single
+board.
 
-This is ignoring the cost of the equipment required (a soldering station
-and an ICSP programmer to burn the bootloader, more on that below).
+The only equipment required to build your own PicoAVR is a soldering
+iron and an ICSP programmer to burn the bootloader (more on that below).
 
 ### BOM
 
@@ -61,8 +73,8 @@ and an ICSP programmer to burn the bootloader, more on that below).
 |X1    | MicroUSB Connector        | USB-MICRO    | 609-4613-1-ND        | 0.46 x 1  |
 |SW1   | Tactile Switch            | 3mm x 4mm    | CKN10502CT-ND        | 0.28 x 1  |
 
-The total comes to 6.5$ per board, although the price goes down if you
-want to build more boards.
+The total comes to 6.5$ per board, and digikey offers educational and
+bulk discounts.
 
 ### PCB
 
@@ -78,15 +90,17 @@ Below is a rendering of the top and bottom of the PCB.
 ![BottomBoard](http://acornejo.github.io/picoAVR/images/board_bottom_render.png "Bottom View PCB")
 
 ### Burning the Bootloader
-To get the PicoAVR usbasp-based bootloader into the AVR chip, you will
-need either: an ICSP programmer, another functioning PicoAVR, or an
-arduino.
+To get the PicoAVR usbasp-based bootloader into the AVR chip you will
+need either: a dedicated [ICSP
+programmer](http://store.atmel.com/PartDetail.aspx?q=p:10500054#tc:description),
+an [Arduino](http://arduino.cc/en/Tutorial/ArduinoISP) and jumper
+cables, or an already functioning PicoAVR.
 
-The PicoAVR provides a standard 6-pin
-ICSP connector that can be used to either burn the bootloader into the
-board (by closing the self-program jumper), or to act as an ICSP
-programmer to reprogram any other AVR development board with an ICSP
-connected (including an arduino).
+The PicoAVR provides a standard 6-pin ICSP connector that can be used to
+either burn the bootloader into the board (by closing the self-program
+jumper), or to act as an ICSP programmer to reprogram any other
+AVR board (including another PicoAVR or an Arduino) using the standard
+6-pin ICSP connector.
 
 ## License
 

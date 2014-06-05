@@ -6652,7 +6652,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="VCC1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND7" library="SparkFun" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="R0402" value="10k"/>
-<part name="JSP" library="SparkFun-Connectors" deviceset="M03X2" device="NO_SILK"/>
+<part name="JSP" library="SparkFun-Connectors" deviceset="M03X2" device="NO_SILK" value="ICSP"/>
 <part name="IC1" library="linear" deviceset="MCP1703" device="CB"/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="M14" device="LOCK" value="M14LOCK"/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M14" device="LOCK" value="M14LOCK"/>

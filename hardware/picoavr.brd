@@ -125,12 +125,12 @@
 </layers>
 <board>
 <plain>
-<wire x1="0.0381" y1="0" x2="36.4365" y2="0" width="0" layer="20"/>
-<wire x1="36.4365" y1="0" x2="36.4365" y2="17.77" width="0" layer="20"/>
-<wire x1="36.4365" y1="17.77" x2="0.0381" y2="17.77" width="0" layer="20"/>
+<wire x1="0.0381" y1="0" x2="36.2712" y2="0" width="0" layer="20"/>
+<wire x1="36.2712" y1="0" x2="36.2712" y2="17.78" width="0" layer="20"/>
+<wire x1="36.2712" y1="17.78" x2="0.0381" y2="17.77" width="0" layer="20"/>
 <wire x1="0.0381" y1="17.77" x2="0.0381" y2="0" width="0" layer="20"/>
-<text x="1.0922" y="7.0612" size="0.508" layer="121" font="vector" ratio="12" rot="R90">MicroUSB</text>
-<text x="21.889721875" y="10.82548125" size="0.508" layer="121" font="vector" ratio="12">U1</text>
+<text x="1.4478" y="6.35" size="0.508" layer="121" font="vector" ratio="12" rot="R90">MicroUSB</text>
+<text x="21.838921875" y="7.85368125" size="0.508" layer="121" font="vector" ratio="12">U1</text>
 <text x="36.255959375" y="12.3088375" size="0.508" layer="121" font="vector" ratio="12" rot="R180">self-program</text>
 <text x="33.030159375" y="10.982959375" size="0.508" layer="121" font="vector" ratio="12">ICSP</text>
 <text x="5.5473625" y="13.3858" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">IC1</text>
@@ -146,7 +146,7 @@
 <text x="30.92311875" y="4.54668125" size="0.508" layer="121" font="vector" ratio="12" rot="R90">LED</text>
 <text x="7.77748125" y="8.2905625" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">R3</text>
 <text x="14.81835625" y="14.0208" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">R4</text>
-<text x="29.804359375" y="11.2928375" size="1.016" layer="122" font="vector" ratio="12" rot="MR0">PicoAVR rev 1.3</text>
+<text x="28.915359375" y="10.8356375" size="1.016" layer="122" font="vector" ratio="12" rot="MR0">PicoAVR rev 1.3</text>
 <text x="1.173475" y="14.745721875" size="0.508" layer="121" font="vector" ratio="12">5v</text>
 <text x="3.525515625" y="14.745721875" size="0.508" layer="121" font="vector" ratio="12">gnd</text>
 <text x="6.14679375" y="15.030203125" size="0.508" layer="121" font="vector" ratio="12">3.3v</text>
@@ -168,9 +168,9 @@
 <text x="11.580440625" y="2.7741625" size="0.508" layer="121" font="vector" ratio="12">d4</text>
 <text x="14.009678125" y="2.42391875" size="0.508" layer="121" font="vector" ratio="12">d5</text>
 <text x="16.8046375" y="2.809240625" size="0.508" layer="121" font="vector" ratio="12">d6</text>
-<text x="19.593559375" y="2.794" size="0.508" layer="121" font="vector" ratio="12">d7</text>
-<text x="21.717" y="2.778759375" size="0.508" layer="121" font="vector" ratio="12">d8</text>
-<text x="24.3484375" y="2.76351875" size="0.508" layer="121" font="vector" ratio="12">d9</text>
+<text x="18.755359375" y="2.3114" size="0.508" layer="121" font="vector" ratio="12">d7</text>
+<text x="20.701" y="2.321559375" size="0.508" layer="121" font="vector" ratio="12">d8</text>
+<text x="23.5102375" y="2.30631875" size="0.508" layer="121" font="vector" ratio="12">d9</text>
 <text x="26.6954" y="2.809240625" size="0.508" layer="121" font="vector" ratio="12">d10</text>
 <text x="29.3471625" y="2.794" size="0.508" layer="121" font="vector" ratio="12">d11</text>
 <text x="31.805878125" y="2.8092375" size="0.508" layer="121" font="vector" ratio="12">d12</text>
@@ -189,7 +189,7 @@
 <text x="30.302196875" y="14.752321875" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc0</text>
 <text x="32.847278125" y="14.7609625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc7</text>
 <text x="35.6006375" y="14.776203125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc6</text>
-<text x="3.048" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd0</text>
+<text x="2.4384" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd0</text>
 <text x="5.588" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd1</text>
 <text x="7.548878125" y="2.809240625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd2</text>
 <text x="9.992359375" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd3</text>
@@ -203,45 +203,45 @@
 <text x="30.48" y="2.763521875" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pb3</text>
 <text x="32.9946" y="2.809240625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pb4</text>
 <text x="35.56" y="2.7787625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pb5</text>
-<text x="7.8384375" y="13.568678125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">3.3v</text>
-<text x="7.9095625" y="11.7602" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">5.0v</text>
+<text x="11.6992375" y="13.416278125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">3.3v</text>
+<text x="11.7195625" y="11.5824" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">5.0v</text>
 <text x="31.150559375" y="13.3756375" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">self-Program</text>
 <polygon width="0.254" layer="122">
-<vertex x="26.24106875" y="5.12073125" curve="-9.500029"/>
-<vertex x="25.919678125" y="5.286259375"/>
-<vertex x="25.121675" y="4.635465625"/>
-<vertex x="24.574465625" y="5.182675"/>
-<vertex x="25.225259375" y="5.980678125" curve="-19.000023"/>
-<vertex x="24.949521875" y="6.646371875"/>
-<vertex x="23.925065625" y="6.750465625"/>
-<vertex x="23.925065625" y="7.524334375"/>
-<vertex x="24.949521875" y="7.628428125" curve="-19.000023"/>
-<vertex x="25.225259375" y="8.294121875"/>
-<vertex x="24.574465625" y="9.092125"/>
-<vertex x="25.121675" y="9.639334375"/>
-<vertex x="25.919678125" y="8.988540625" curve="-19.000023"/>
-<vertex x="26.585371875" y="9.264278125"/>
-<vertex x="26.689465625" y="10.288734375"/>
-<vertex x="27.463334375" y="10.288734375"/>
-<vertex x="27.567428125" y="9.264278125" curve="-19.000023"/>
-<vertex x="28.233121875" y="8.988540625"/>
-<vertex x="29.031125" y="9.639334375"/>
-<vertex x="29.578334375" y="9.092125"/>
-<vertex x="28.927540625" y="8.294121875" curve="-19.000023"/>
-<vertex x="29.203278125" y="7.628428125"/>
-<vertex x="30.227734375" y="7.524334375"/>
-<vertex x="30.227734375" y="6.750465625"/>
-<vertex x="29.203278125" y="6.646371875" curve="-19.000023"/>
-<vertex x="28.927540625" y="5.980678125"/>
-<vertex x="29.578334375" y="5.182675"/>
-<vertex x="29.031125" y="4.635465625"/>
-<vertex x="28.233121875" y="5.286259375" curve="-9.500029"/>
-<vertex x="27.91173125" y="5.12073125"/>
-<vertex x="27.4560875" y="6.22075" curve="67.500061"/>
-<vertex x="28.068575" y="7.1374" curve="247.500073"/>
-<vertex x="26.6967125" y="6.22075"/>
+<vertex x="25.63146875" y="4.46033125" curve="-9.500029"/>
+<vertex x="25.310078125" y="4.625859375"/>
+<vertex x="24.512075" y="3.975065625"/>
+<vertex x="23.964865625" y="4.522275"/>
+<vertex x="24.615659375" y="5.320278125" curve="-19.000023"/>
+<vertex x="24.339921875" y="5.985971875"/>
+<vertex x="23.315465625" y="6.090065625"/>
+<vertex x="23.315465625" y="6.863934375"/>
+<vertex x="24.339921875" y="6.968028125" curve="-19.000023"/>
+<vertex x="24.615659375" y="7.633721875"/>
+<vertex x="23.964865625" y="8.431725"/>
+<vertex x="24.512075" y="8.978934375"/>
+<vertex x="25.310078125" y="8.328140625" curve="-19.000023"/>
+<vertex x="25.975771875" y="8.603878125"/>
+<vertex x="26.079865625" y="9.628334375"/>
+<vertex x="26.853734375" y="9.628334375"/>
+<vertex x="26.957828125" y="8.603878125" curve="-19.000023"/>
+<vertex x="27.623521875" y="8.328140625"/>
+<vertex x="28.421525" y="8.978934375"/>
+<vertex x="28.968734375" y="8.431725"/>
+<vertex x="28.317940625" y="7.633721875" curve="-19.000023"/>
+<vertex x="28.593678125" y="6.968028125"/>
+<vertex x="29.618134375" y="6.863934375"/>
+<vertex x="29.618134375" y="6.090065625"/>
+<vertex x="28.593678125" y="5.985971875" curve="-19.000023"/>
+<vertex x="28.317940625" y="5.320278125"/>
+<vertex x="28.968734375" y="4.522275"/>
+<vertex x="28.421525" y="3.975065625"/>
+<vertex x="27.623521875" y="4.625859375" curve="-9.500029"/>
+<vertex x="27.30213125" y="4.46033125"/>
+<vertex x="26.8464875" y="5.56035" curve="67.500061"/>
+<vertex x="27.458975" y="6.477" curve="247.500073"/>
+<vertex x="26.0871125" y="5.56035"/>
 </polygon>
-<text x="11.651159375" y="6.961559375" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">SW1</text>
+<text x="11.625759375" y="7.012359375" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">SW1</text>
 <text x="14.943" y="5.569640625" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">Q1</text>
 </plain>
 <libraries>
@@ -1908,7 +1908,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PROD_ID" value="IC-09069" x="39.9215" y="0.469" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R4" library="resistor" package="R0402" value="10k" x="13.393415625" y="13.97458125" smashed="yes"/>
-<element name="JSP" library="SparkFun-Connectors" package="2X3-NS" value="" x="33.6423" y="7.1882" smashed="yes" rot="R90"/>
+<element name="JSP" library="SparkFun-Connectors" package="2X3-NS" value="ICSP" x="33.6423" y="7.1882" smashed="yes" rot="R90"/>
 <element name="IC1" library="linear" package="SOT23" value="MCP1703CB" x="5.5372" y="13.3731" smashed="yes" rot="R90"/>
 <element name="JP2" library="SparkFun-Connectors" package="1X14_LOCK" value="M14LOCK" x="1.8415" y="1.27" smashed="yes"/>
 <element name="JP3" library="SparkFun-Connectors" package="1X14_LOCK" value="M14LOCK" x="1.8415" y="16.51" smashed="yes"/>
@@ -1923,8 +1923,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="SELF_PROGRAM" library="SparkFun-Passives" package="1X02" value="" x="32.3967375" y="13.407759375" smashed="yes">
 <attribute name="VALUE" x="31.1267375" y="10.232759375" size="1.27" layer="27"/>
 </element>
-<element name="R6" library="SparkFun" package="0402-RES" value="4.7k" x="20.335240625" y="12.98438125" smashed="yes" rot="MR180"/>
-<element name="R7" library="SparkFun" package="0402-RES" value="4.7k" x="20.335240625" y="14.20168125" smashed="yes" rot="MR180"/>
+<element name="R6" library="SparkFun" package="0402-RES" value="4.7k" x="20.335240625" y="12.70498125" smashed="yes" rot="MR180"/>
+<element name="R7" library="SparkFun" package="0402-RES" value="4.7k" x="20.335240625" y="13.94768125" smashed="yes" rot="MR180"/>
 <element name="SJ1" library="SparkFun-Passives" package="SJ_3" value="" x="8.9916" y="12.8778" smashed="yes" rot="MR90">
 <attribute name="VALUE" x="8.9916" y="12.7777" size="0.02" layer="28" rot="MR90"/>
 </element>
@@ -2040,7 +2040,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R6" pad="1"/>
 <contactref element="R7" pad="1"/>
 <contactref element="SJ1" pad="3"/>
-<wire x1="19.685240625" y1="12.98438125" x2="19.685240625" y2="14.20168125" width="0.254" layer="16"/>
+<wire x1="19.685240625" y1="12.70498125" x2="19.685240625" y2="13.94768125" width="0.254" layer="16"/>
 <via x="21.6662" y="6.3872" extent="1-16" drill="0.6604"/>
 <wire x1="17.8489" y1="8.489" x2="17.2585" y2="8.489" width="0.254" layer="1"/>
 <wire x1="17.2585" y1="8.489" x2="16.8715" y2="8.222" width="0.254" layer="1"/>
@@ -2078,8 +2078,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="12.6669625" y1="14.507721875" x2="11.129521875" y2="14.507721875" width="0.254" layer="1"/>
 <wire x1="11.129521875" y1="14.507721875" x2="10.921596875" y2="14.504553125" width="0.254" layer="1"/>
 <wire x1="10.921596875" y1="14.504553125" x2="10.8458" y2="14.5034" width="0.254" layer="1"/>
-<wire x1="19.685240625" y1="14.20168125" x2="17.5494" y2="14.20168125" width="0.254" layer="16"/>
-<wire x1="17.5494" y1="14.20168125" x2="17.272" y2="14.0208" width="0.254" layer="16"/>
+<wire x1="19.685240625" y1="13.94768125" x2="17.27" y2="13.94768125" width="0.254" layer="16"/>
+<wire x1="17.27" y1="13.94768125" x2="17.272" y2="14.0208" width="0.254" layer="16"/>
 <wire x1="8.9916" y1="13.7668" x2="10.668" y2="13.7668" width="0.4064" layer="16"/>
 <wire x1="10.668" y1="13.7668" x2="14.2866" y2="13.7668" width="0.4064" layer="16"/>
 <wire x1="14.2866" y1="13.7668" x2="21.6662" y2="6.3872" width="0.4064" layer="16"/>
@@ -2345,8 +2345,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="19.86888125" y1="16.340490625" x2="19.685" y2="16.46428125" width="0.254" layer="1"/>
 <wire x1="23.342596875" y1="14.0208" x2="23.31211875" y2="14.2008" width="0.254" layer="1"/>
 <wire x1="23.31211875" y1="14.2008" x2="23.3415" y2="14.23018125" width="0.254" layer="1"/>
-<wire x1="20.985240625" y1="12.98438125" x2="22.306178125" y2="12.98438125" width="0.254" layer="16"/>
-<wire x1="22.306178125" y1="12.98438125" x2="23.342596875" y2="14.0208" width="0.254" layer="16"/>
+<wire x1="20.985240625" y1="12.70498125" x2="22.001378125" y2="12.73038125" width="0.254" layer="16"/>
+<wire x1="22.001378125" y1="12.73038125" x2="23.342596875" y2="14.0208" width="0.254" layer="16"/>
 <wire x1="19.812" y1="16.256" x2="19.86888125" y2="16.340490625" width="0.1524" layer="1"/>
 <wire x1="19.812" y1="16.256" x2="19.6215" y2="16.383" width="0.1524" layer="1"/>
 </signal>
@@ -2361,8 +2361,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="19.308059375" y1="14.950440625" x2="17.0815" y2="16.637" width="0.254" layer="1"/>
 <via x="22.19579375" y="14.0208" extent="1-16" drill="0.3302"/>
 <wire x1="22.19579375" y1="14.0208" x2="20.736440625" y2="14.879440625" width="0.254" layer="1"/>
-<wire x1="20.985240625" y1="14.20168125" x2="22.0149125" y2="14.20168125" width="0.254" layer="16"/>
-<wire x1="22.0149125" y1="14.20168125" x2="22.19579375" y2="14.0208" width="0.254" layer="16"/>
+<wire x1="20.985240625" y1="13.94768125" x2="22.0911125" y2="13.94768125" width="0.254" layer="16"/>
+<wire x1="22.0911125" y1="13.94768125" x2="22.19579375" y2="14.0208" width="0.254" layer="16"/>
 </signal>
 <signal name="N$11">
 <contactref element="LED" pad="A"/>

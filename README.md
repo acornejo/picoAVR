@@ -15,15 +15,18 @@ software implementation of the USB stack, and when connected to your
 computer can easily be programmed to emulate a keyboard,
 mouse or any other HID device.
 
-The PicoAVR board is similar in capabilities to the [Arduino UNO](http://arduino.cc/en/Main/ArduinoBoardUno), [Arduino
-Micro](http://arduino.cc/en/Main/arduinoBoardMicro) or the [Arduino Leonardo](http://arduino.cc/en/Main/arduinoBoardLeonardo), but by using an atmega328p and V-USB
-instead of an FTDI chip or an atmega328u4 the number of components and
-the cost of the PicoAVR is significantly reduced.
+The PicoAVR board is similar in capabilities to the [Arduino
+UNO](http://arduino.cc/en/Main/ArduinoBoardUno), [Arduino
+Micro](http://arduino.cc/en/Main/arduinoBoardMicro) or the [Arduino
+Leonardo](http://arduino.cc/en/Main/arduinoBoardLeonardo), but by using
+an atmega328p and V-USB instead of an FTDI chip or an atmega328u4 the
+number of components and the cost of the PicoAVR is significantly
+reduced.
 
 Since PicoAVR uses the same
 [protocol](http://www.obdev.at/products/vusb/usbasploader.html) as the
-[usbasp](www.fischl.de/usbasp/) for programming, it is fully compatible
-with the latest versions of avrdude. As a result of this both 
+[usbasp](www.fischl.de/usbasp/) for programming, it is supported by
+the latest versions of avrdude. As a result of this both 
 Atmel Studio 6 or the Arduino Software can be used as complete
 development environments for the PicoAVR. However, you are not
 constrained to these, and you can easily develop for the PicoAVR using

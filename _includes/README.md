@@ -1,6 +1,7 @@
 [PicoAVR](http://acornejo.github.io/picoAVR) is an open source project
 that aims to develop a minimalistic but fully functional AVR development
-board.
+board. You can buy the components to build your own for less than 10$
+per board.
 
 The PicoAVR can be powered and programmed through a standard MicroUSB
 connector, the same connector used by android phones and tablets.

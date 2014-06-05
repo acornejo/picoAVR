@@ -3,8 +3,8 @@
 [PicoAVR](http://acornejo.github.io/picoAVR) is an open source AVR
 development board which aims to a minimalistic but fully functional
 alternative to Arduino.
-For less than 10$ you can buy all the components required to
-build your own PicoAVR.
+PicoAVR is less than 1 square inch, and for less than 10$ you can buy
+all the components required to build your own PicoAVR.
 
 ![Blinky](http://acornejo.github.io/picoAVR/images/photo.jpg "Blinky on PicoAVR")
 

@@ -5,7 +5,7 @@ that aims to develop a minimalistic but fully functional AVR development
 board. You can buy the components to build your own for less than 10$
 per board.
 
-![Blinky](images/photo.jpg "Blinky on PicoAVR")
+![Blinky](http://acornejo.github.io/picoAVR/images/photo.jpg "Blinky on PicoAVR")
 
 The PicoAVR can be powered and programmed through a standard MicroUSB
 connector, the same connector used by android phones and tablets.
@@ -86,8 +86,8 @@ The eagle board files are available in the
 
 Below is a rendering of the top and bottom of the PCB.
 
-![TopBoard](images/board_top_render.png "Top View PCB")
-![BottomBoard](images/board_bottom_render.png "Bottom View PCB")
+![TopBoard](http://acornejo.github.io/picoAVR/images/board_top_render.png "Top View PCB")
+![BottomBoard](http://acornejo.github.io/picoAVR/images/board_bottom_render.png "Bottom View PCB")
 
 ### Burning the Bootloader
 To get the PicoAVR usbasp-based bootloader into the AVR chip you will

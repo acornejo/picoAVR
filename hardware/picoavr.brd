@@ -187,8 +187,8 @@
 <text x="25.349196875" y="14.7609625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc2</text>
 <text x="27.762196875" y="14.7609625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc1</text>
 <text x="30.302196875" y="14.752321875" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc0</text>
-<text x="32.847278125" y="14.7609625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc7</text>
-<text x="35.6006375" y="14.776203125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pc6</text>
+<text x="33.152078125" y="14.7609625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">adc7</text>
+<text x="35.8038375" y="14.776203125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">adc6</text>
 <text x="2.4384" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd0</text>
 <text x="5.588" y="2.794" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd1</text>
 <text x="7.548878125" y="2.809240625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pd2</text>

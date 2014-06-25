@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0001" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -204,7 +204,7 @@
 <text x="35.56" y="2.7787625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pb5</text>
 <text x="11.6992375" y="13.416278125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">3.3v</text>
 <text x="11.7195625" y="11.5824" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">5.0v</text>
-<text x="33.461959375" y="13.7820375" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">self-Program</text>
+<text x="33.766759375" y="13.0962375" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">self-Program</text>
 <polygon width="0.254" layer="122">
 <vertex x="25.63146875" y="4.46033125" curve="-9.500029"/>
 <vertex x="25.310078125" y="4.625859375"/>
@@ -242,6 +242,7 @@
 </polygon>
 <text x="11.625759375" y="7.012359375" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">SW1</text>
 <text x="14.943" y="5.569640625" size="0.508" layer="121" font="vector" ratio="12" rot="R90" align="center">Q1</text>
+<text x="33.241159375" y="13.032159375" size="0.508" layer="121" font="vector" ratio="12" rot="R180" align="center">RST</text>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -1916,7 +1917,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="SJ1" library="SparkFun-Passives" package="SJ_3" value="SJ1" x="8.9916" y="12.8778" smashed="yes" rot="MR90">
 <attribute name="VALUE" x="8.9916" y="12.7777" size="0.02" layer="28" rot="MR90"/>
 </element>
-<element name="SJ2" library="SparkFun-Passives" package="SJ_2S-NO" value="SOLDERJUMPERNO" x="34.888259375" y="13.959640625" smashed="yes" rot="MR270"/>
+<element name="SJ2" library="SparkFun-Passives" package="SJ_2S-NO" value="SOLDERJUMPERNO" x="34.888259375" y="13.299240625" smashed="yes" rot="MR270"/>
 <element name="SW1" library="adafruit" package="KMR2" value="SPST_TACT-KMR2" x="11.6384" y="6.9397" rot="R270"/>
 <element name="SW2" library="adafruit" package="KMR2" value="SPST_TACT-KMR2" x="33.2232" y="13.0302" rot="R180"/>
 </elements>
@@ -2100,17 +2101,20 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SJ2" pad="1"/>
 <wire x1="21.7415" y1="13.0356" x2="20.2895" y2="14.4776" width="0.254" layer="1"/>
 <wire x1="14.043415625" y1="13.97458125" x2="13.870940625" y2="14.1013375" width="0.254" layer="1"/>
-<wire x1="17.1529" y1="14.978" x2="32.258" y2="14.978" width="0.254" layer="16"/>
-<wire x1="32.258" y1="14.978" x2="34.3199" y2="14.978" width="0.254" layer="16"/>
+<wire x1="17.1529" y1="14.978" x2="32.273240625" y2="14.978" width="0.254" layer="16"/>
+<wire x1="32.273240625" y1="14.978" x2="34.3199" y2="14.978" width="0.254" layer="16"/>
 <wire x1="20.2895" y1="14.4776" x2="18.088503125" y2="14.4776" width="0.254" layer="1"/>
 <wire x1="18.088503125" y1="14.4776" x2="14.5415" y2="16.383" width="0.254" layer="1"/>
 <wire x1="13.870940625" y1="14.1013375" x2="14.5415" y2="14.771896875" width="0.254" layer="1"/>
 <wire x1="14.5415" y1="14.771896875" x2="14.5415" y2="16.383" width="0.254" layer="1"/>
-<wire x1="34.3199" y1="14.978" x2="34.888259375" y2="14.409640625" width="0.254" layer="16"/>
+<wire x1="34.3199" y1="14.978" x2="34.888259375" y2="13.749240625" width="0.254" layer="16"/>
 <contactref element="SW2" pad="2"/>
 <wire x1="31.2232" y1="13.8302" x2="31.2232" y2="13.9432" width="0.254" layer="1"/>
-<wire x1="31.2232" y1="13.9432" x2="32.258" y2="14.978" width="0.254" layer="1"/>
-<via x="32.258" y="14.978" extent="1-16" drill="0.3302"/>
+<wire x1="31.2232" y1="13.9432" x2="32.1945" y2="13.9432" width="0.254" layer="1"/>
+<wire x1="32.1945" y1="13.9432" x2="32.222440625" y2="13.947140625" width="0.254" layer="1"/>
+<via x="32.222440625" y="13.947140625" extent="1-16" drill="0.3302"/>
+<wire x1="32.222440625" y1="13.947140625" x2="32.27578125" y2="13.947140625" width="0.254" layer="16"/>
+<wire x1="32.27578125" y1="13.947140625" x2="32.273240625" y2="14.978" width="0.254" layer="16"/>
 </signal>
 <signal name="USB_DPLUS">
 <contactref element="R1" pad="2"/>
@@ -2272,7 +2276,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="24.1545" y1="2.393" x2="26.2455" y2="2.393" width="0.254" layer="1"/>
 <wire x1="26.2455" y1="2.393" x2="27.2415" y2="1.397" width="0.254" layer="1"/>
 <wire x1="34.8869" y1="10.16" x2="34.8869" y2="11.8092" width="0.254" layer="16"/>
-<wire x1="34.8869" y1="11.8092" x2="34.888259375" y2="13.509640625" width="0.254" layer="16"/>
+<wire x1="34.8869" y1="11.8092" x2="34.888259375" y2="12.849240625" width="0.254" layer="16"/>
 <wire x1="34.8869" y1="11.3665" x2="34.8869" y2="10.16" width="0.254" layer="16"/>
 <wire x1="23.3353" y1="5.2188" x2="27.0065" y2="8.89" width="0.254" layer="16"/>
 <wire x1="27.0065" y1="8.89" x2="34.29" y2="8.89" width="0.254" layer="16"/>

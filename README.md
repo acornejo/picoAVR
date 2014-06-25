@@ -81,8 +81,8 @@ bulk discounts.
 
 ### PCB
 
-You can get 3 PCB's from [oshpark.com](http://oshpark.com) for only 5$
-including shipping. That is less than 2$ per PicoAVR board!
+You can get 3 PCB's from [oshpark.com](https://oshpark.com/shared_projects/4zQfKzvO) for only 4.95$
+including shipping. That is less than 2$ per PicoAVR board! Click [here](https://oshpark.com/shared_projects/4zQfKzvO) to order your own. 
 
 The eagle board files are available in the
 [repository](https://github.com/acornejo/picoAVR/tree/master/hardware).

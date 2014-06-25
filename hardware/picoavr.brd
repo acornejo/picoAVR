@@ -204,7 +204,7 @@
 <text x="35.56" y="2.7787625" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">pb5</text>
 <text x="11.6992375" y="13.416278125" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">3.3v</text>
 <text x="11.7195625" y="11.5824" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">5.0v</text>
-<text x="33.766759375" y="13.0962375" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">self-Program</text>
+<text x="33.48228125" y="13.106396875" size="0.508" layer="122" font="vector" ratio="12" rot="MR0">self-Program</text>
 <polygon width="0.254" layer="122">
 <vertex x="25.63146875" y="4.46033125" curve="-9.500029"/>
 <vertex x="25.310078125" y="4.625859375"/>

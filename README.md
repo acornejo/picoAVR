@@ -25,7 +25,7 @@ reduced.
 Since PicoAVR uses the same
 [protocol](http://www.obdev.at/products/vusb/usbasploader.html) as the
 [usbasp](www.fischl.de/usbasp/) for programming, it is supported by
-the latest versions of avrdude. As a result of this both 
+the latest versions of avrdude. As a result both 
 Atmel Studio 6 or the Arduino Software can be used as complete
 development environments for the PicoAVR. However, you are not
 constrained to these, and you can easily develop for the PicoAVR using

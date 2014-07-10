@@ -1,6 +1,7 @@
 F_CPU = 12000000
-DEVICE = atmega328
+DEVICE = atmega328p
 PROGRAMMER = -c usbasp
+# PROGRAMMER = -P /dev/tty.usbmodem00063471 -c avrisp2
 
 VPATH = ../usbdrv
 
